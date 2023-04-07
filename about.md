@@ -1,6 +1,6 @@
 ---
 layout: page
-title: О проекте
+title: Документация
 permalink: /about/
 ---
 
