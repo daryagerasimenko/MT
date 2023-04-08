@@ -1,11 +1,12 @@
 title: Московский текст
 author: 
   name: Диана Есаян, Михаил Гольцман, Дарья Герасименко, Георгий Гончаренко 
+  Куратор проекта Борис Орехов.
 
 # The `>` after `description:` means to ignore line-breaks until next key.
 # If you want to omit the line-break after the end of text, use `>-` instead.
 description: >
-  Семиотическое и социологическое пространства Москвы. Куратор проекта Борис Валерьевич Орехов.
+  Семиотическое и социологическое пространства Москвы. 
 
 # Build settings
 
