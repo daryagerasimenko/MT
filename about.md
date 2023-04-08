@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Документация
+title: Об инструментах
 permalink: /about/
 ---
 
