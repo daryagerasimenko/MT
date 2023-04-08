@@ -4,6 +4,7 @@ layout: base
 <article class="post">
   
   <h2>Модуль moscow-toponym</h2>
+  <p><a href="https://github.com/diana-esaian/moscow_toponyms">Репозиторий пакета</a></p>
   <p>Извлекает московские топонимы из русских текстов при помощи таких библиотек Python, 
     как SpaCy, Natasha и PyMorphy2.</p>
   <p>С помощью библиотек Natasha и SpaCy производятся разметка именованных сущностей и извлечение всех локаций, 
@@ -16,7 +17,7 @@ layout: base
     <li>start_char — позиция начала выделенного топонима (например, 79)</li>
     <li>stop_char — позиция конца выделенного топонима (например, 85)</li>
   </ul>
-  <h4>Применение</h4>
+  <h3>Применение</h3>
   <p><code>from moscow_toponyms import ExtractMosToponyms</code></p>
   <p><code>text = "Однажды весною, в час небывало жаркого заката, в Москве, на Патриарших прудах, появились два гражданина."</code></p>
   <p><code>extract_toponyms = ExtractMosToponyms(text)</code></p>
@@ -38,7 +39,6 @@ layout: base
   <p><code>final_results = extract_toponyms.inner_merging_filtering(black_list, spacy_dict, natasha_dict)</code></p>
   <p><code>print(final_results)</code></p>
   <p>[{'toponym': 'Смоленской площади', 'lemmatized_toponym': 'Смоленская площадь', 'start_char': 51, 'stop_char': 69}]</p>
-  <p><a href="https://github.com/diana-esaian/moscow_toponyms">Репозитории пакета</a></p>
   
   <h2>Пример таблицы с результатами</h2>
   <img src="https://i.ibb.co/gmyqvJ3/2023-04-08-09-46-07.png" alt="Пример таблицы с результатами" width="830" height="350">
