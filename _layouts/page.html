@@ -16,6 +16,29 @@ layout: base
     <li>start_char — позиция начала выделенного топонима (например, 79)</li>
     <li>stop_char — позиция конца выделенного топонима (например, 85)</li>
   </ul>
+  <h4>Usage</h4>
+  <p>from moscow_toponyms import ExtractMosToponyms</p>
+  <code>text = "Однажды весною, в час небывало жаркого заката, в Москве, на Патриарших прудах, появились два гражданина."</code>
+  <code>extract_toponyms = ExtractMosToponyms(text)</code>
+  <p>Using SpaCy extract toponyms and their position in a text, lemmatize extracted toponyms using PyMorphy2:</p>
+  <code>spacy_extracted = extract_toponyms.spacy_extract()</code>
+  <code>print(spacy_extracted)</code>
+  <p>({51: 'смоленский площадь'}, {0: 'саша панкратов'})</p>
+  <code>spacy_dict = spacy_extracted[0]</code>
+  <code>spacy_names = spacy_extracted[1]</code>
+  <p>Using Natasha extract toponyms and their position in a text:</p>
+  <code>natasha_extractor = extract_toponyms.natasha_extract()</code>
+  <code>print(natasha_extractor)</code>
+  <p>({51: ['Смоленской площади', 'Смоленская площадь', 69]}, {0: 'Саша Панкратов'})</p>
+  <code>natasha_dict = natasha_extractor[0]</code>
+  <code>natasha_names = natasha_extractor[1]</code>
+  <p>Add the extracted names to the existing black list for cleaner output:</p>
+  <code>black_list = extract_toponyms.merging_blacklists(spacy_names, natasha_names)</code>
+  <p>Filter all extracted toponyms and return only Moscow toponyms in inflected and base forms, their start and end character
+  indices</p>
+  <code>final_results = extract_toponyms.inner_merging_filtering(black_list, spacy_dict, natasha_dict)</code>
+  <code>print(final_results)</code>
+  <p>[{'toponym': 'Смоленской площади', 'lemmatized_toponym': 'Смоленская площадь', 'start_char': 51, 'stop_char': 69}]</p>
   <p>Более подробную документацию можно найти в <a href="https://github.com/diana-esaian/moscow_toponyms">репозитории пакета</a></p>
   
   <h2>Пример таблицы с результатами</h2>
